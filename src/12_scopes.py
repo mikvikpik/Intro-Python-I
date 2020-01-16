@@ -5,8 +5,8 @@
 x = 12
 
 def change_x():
+    global x
     x = 99
-
 change_x()
 
 # This prints 12. What do we have to modify in changeX() to get it to print 99?
@@ -16,10 +16,12 @@ print(x)
 # This nested function has a similar problem.
 
 def outer():
+    global y
     y = 120
 
     def inner():
-        y = 999
+        
+         y = 999
 
     inner()
 
@@ -28,3 +30,4 @@ def outer():
     print(y)
 
 outer()
+
